@@ -1,0 +1,20 @@
+{{#nameservers}}
+nserver {{ ip }}
+{{/nameservers}}
+nscache  {{ nscache }}
+nscache6 {{ nscache }}
+
+log
+logformat "~{{{ logformat }}}"
+
+maxconn {{ maxconn }}
+
+allow * * * * HTTP,HTTPS * *
+{{#listen_ips}}
+proxy -n -a -46 -p{{ listen_port }} -i{{ ip }} -e{{ ip }}
+{{/listen_ips}}
+{{^listen_ips}}
+proxy -n -a -46 -p{{ listen_port }}
+{{/listen_ips}}
+
+end

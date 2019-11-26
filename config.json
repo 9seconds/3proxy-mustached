@@ -1,0 +1,11 @@
+{
+  "nscache": 65536,
+  "nameservers": [
+    {"ip": "1.1.1.1"},
+    {"ip": "1.0.0.1"}
+  ],
+  "logformat": "%Y-%m-%dT%H%:%M:%S.%. %C:%c->%i:%p->%n(%Q:%q) :: %T",
+  "maxconn": 2000,
+  "listen_port": 3128,
+  "listen_ips": []
+}
